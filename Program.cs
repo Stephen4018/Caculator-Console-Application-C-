@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Methods.operators;
+using System;
 
 class Program
 {
     public static void Main()
     {
+        var operators = new Operators();
         double result1 = 0;
         double result2 = 0;
         string num1;
@@ -58,71 +60,34 @@ class Program
 
             if (operate == "+")
             {
-                Addition(result1, result2);
+                Operators.Addition(result1, result2);
             }
             else if (operate == "-")
             {
-                Subtraction(result1, result2);
-            }
+                Operators.Subtraction(result1, result2);
+            }   
             else if (operate == "*")
             {
-                Multiplication(result1, result2);
+                Operators.Multiplication(result1, result2);
             }
             else if (operate == "/")
             {
-                Division(result1, result2);
+                Operators.Division(result1, result2);
             }
             else
             {
-                Remainder(result1, result2);
+                Operators.Remainder(result1, result2);
             }
 
-            Console.WriteLine("Done? YES OR NO");
+            Console.WriteLine("Do you want to perform another operation? YES OR NO");
             response = Console.ReadLine().ToUpper();
 
             if (response == "YES")
-                Console.WriteLine("THANK YOU FOR BANKING WITH US, SEE YOU SOME OTHER TIME");
+                Console.WriteLine("THANK YOU FOR TRUSTING MY CACULATION");
 
         } while (response != "YES");
 
     }
 
    
-
-    // METHODS FOR MATHEMATICAL OPERATION
-    public static void Addition( double num1, double num2)
-    {
-
-       double result = num1 + num2;
-        Console.WriteLine($"{num1} + {num2} = {result}"); 
-    }
-
-    public static void Subtraction(double num1, double num2)
-    {
-
-        double result = num1 - num2;
-        Console.WriteLine($"{num1} - {num2} = {result}");
-    }
-
-    public static void Multiplication(double num1, double num2)
-    {
-        
-        double result = num1 * num2;
-        Console.WriteLine($"{num1} * {num2} = {result}");
-    }
-
-    public static void Remainder(double num1, double num2)
-    {
-
-        double result = num1 % num2;
-        Console.WriteLine($"{num1} % {num2} = {result}");
-    }
-
-     public static void Division( double num1, double num2)
-    {
-
-       double result = num1 / num2;
-        Console.WriteLine($"{num1} / {num2} = {result}"); 
-        
-    }
 }
